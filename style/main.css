@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'Neue-Helvetica-43-Extended';
+  src: url('../fonts/Neue-Helvetica-Font/WOFF2/Neue Helvetica 43 Extended Light.woff2') format('woff2'),
+       url('../fonts/Neue-Helvetica-Font/WOFF/Neue Helvetica 43 Extended Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Neue-Helvetica-43-Extended', SimSum, sans-serif;
+    color: #fff;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: rgba(0,0,0,0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+}
+
+.topbar .brand {
+  color: #fff;
+  font-family: 'Neue-Helvetica-43-Extended', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.topbar .nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 16px;
+}
+
+.content {
+  padding: 24px 20px 80px;
+}
+
+h1 {
+    font-size: 72px;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
