@@ -2,7 +2,12 @@
   font-family: 'Neue-Helvetica-43-Extended';
   src: url('../fonts/Neue-Helvetica-Font/WOFF2/Neue Helvetica 43 Extended Light.woff2') format('woff2'),
        url('../fonts/Neue-Helvetica-Font/WOFF/Neue Helvetica 43 Extended Light.woff') format('woff');
-  font-weight: 300;
+@font-face {
+  font-family: 'SIMSUN';
+  src: url('https://static.wfonts.com/data/2015/08/10/simsun/SIMSUN.ttf') format('ttf');
+  font-display: swap;
+}
+    font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -11,7 +16,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
-    font-family: 'Neue-Helvetica-43-Extended', SimSum, sans-serif;
+    font-family: 'SIMSUN', SimSun, sans-serif;
     color: #fff;
 }
 
