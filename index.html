@@ -9,41 +9,42 @@
 </head>
 <body>
     <div class="app-shell">
-        <aside class="sidebar">
-            <div class="brand">crapper.mov</div>
-            <nav class="sidebar-nav">
-                <a href="index.html">home</a>
-                <a href="#">the crazy bald latvian teacher</a>
-                <a href="#"></a>
-            </nav>
-            <div class="sidebar-footer">
-                <p>add the crapper.mov button to your website</p>
-                <div class="code-block">
-                    <pre><code id="sidebar-code">&lt;a href="https://crapper.mov" target="_blank"&gt;&lt;img src="https://crapper.mov/images/button.gif" alt="crapper.mov"&gt;&lt;/a&gt;</code></pre>
-                </div>
-                <button class="copy-code-button" type="button">copy</button>
-              
-            </div>
-        </aside>
+        <div id="sidebar-container"></div>
         <main class="content">
             <h1>welsocem to the coolest place ever </h1>
             <p>ok</p>
+			<img src="./images/continue.png" width="100%" height="100%">
         </main>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var button = document.querySelector('.copy-code-button');
-            var code = document.getElementById('sidebar-code');
-            if (!button || !code) return;
-            button.addEventListener('click', function () {
-                var text = code.textContent.trim();
-                navigator.clipboard.writeText(text).then(function () {
-                    button.textContent = 'copied';
-                    setTimeout(function () {
-                        button.textContent = 'copy';
-                    }, 1200);
+            fetch('sidebar.html')
+                .then(function (response) {
+                    if (!response.ok) throw new Error('Failed to load sidebar');
+                    return response.text();
+                })
+                .then(function (html) {
+                    document.getElementById('sidebar-container').innerHTML = html;
+                    attachCopyButton();
+                })
+                .catch(function (error) {
+                    console.error(error);
                 });
-            });
+
+            function attachCopyButton() {
+                var button = document.querySelector('.copy-code-button');
+                var code = document.querySelector('.sidebar-code');
+                if (!button || !code) return;
+                button.addEventListener('click', function () {
+                    var text = code.textContent.trim();
+                    navigator.clipboard.writeText(text).then(function () {
+                        button.textContent = 'copied';
+                        setTimeout(function () {
+                            button.textContent = 'copy';
+                        }, 1200);
+                    });
+                });
+            }
         });
     </script>
 </body>
