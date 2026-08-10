@@ -73,6 +73,9 @@ body {
 
 .content {
   padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 h1 {
@@ -81,6 +84,124 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Neue-Helvetica-43-Extended', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.hero-card {
+  border: 1px solid rgba(255,255,255,0.16);
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  padding: 28px;
+  border-radius: 0px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.hero-kicker {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 12px;
+  color: #9bd8ff;
+}
+
+.hero-card h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+  line-height: 0.95;
+}
+
+.hero-copy {
+  max-width: 680px;
+  margin: 0 0 18px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.82);
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-badges span {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  font-size: 13px;
+}
+
+.bot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.bot-panel {
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 0px;
+  padding: 20px 22px;
+  background: rgba(255,255,255,0.03);
+}
+
+.bot-panel h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-family: 'Neue-Helvetica-43-Extended', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.bot-panel ul {
+  padding-left: 18px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+}
+
+.bot-panel p {
+  margin: 0;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+}
+
+.bottom-cta {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  padding: 14px 20px;
+  text-decoration: none;
+  border-radius: 0px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.28);
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.action-button:hover,
+.action-button:focus {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.action-button--stoat {
+  background: #fff;
+  color: #000;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.action-button--discord {
+  background: #000;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.18);
 }
 
 @media (max-width: 820px) {
@@ -97,6 +218,14 @@ h1 {
 
   .sidebar-nav a {
     margin-bottom: 14px;
+  }
+
+  .bot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-button {
+    width: 100%;
   }
 }
 
