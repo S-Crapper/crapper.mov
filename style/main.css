@@ -31,7 +31,7 @@ body {
   position: sticky;
   top: 0;
   align-self: start;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,6 +39,7 @@ body {
   background: rgba(0, 0, 0, 0.95);
   border-right: 1px solid rgba(255, 255, 255, 0.06);
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .sidebar .brand {
