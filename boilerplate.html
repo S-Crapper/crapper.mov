@@ -11,6 +11,7 @@
     <div class="app-shell">
         <div id="sidebar-container"></div>
         <main class="content">
+            <div id="footer-container"></div>
         </main>
     </div>
     <script>
@@ -23,6 +24,18 @@
                 .then(function (html) {
                     document.getElementById('sidebar-container').innerHTML = html;
                     attachCopyButton();
+                })
+                .catch(function (error) {
+                    console.error(error);
+                });
+
+            fetch('footer.html')
+                .then(function (response) {
+                    if (!response.ok) throw new Error('Failed to load footer');
+                    return response.text();
+                })
+                .then(function (html) {
+                    document.getElementById('footer-container').innerHTML = html;
                 })
                 .catch(function (error) {
                     console.error(error);
