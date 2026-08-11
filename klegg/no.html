@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>majic klegg on crapper.mov</title>
+    <meta name="description" content="klegg links discord and stoat communities together.">
+    <meta property="og:image" content="https://crapper.mov/images/clickheresav.gif" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="3000" />
+    <link rel="stylesheet" href="../style/main.css">
+</head>
+<body>
+    <div class="app-shell">
+        <div id="sidebar-container"></div>
+        <main class="content">
+                <h1>link your discord and stoat community with majic klegg</h1>
+
+            <section class="bot-grid">
+                <div class="bot-panel">
+                    <h2>what klegg does</h2>
+                    <ul>
+                        <li>klegg's wizard automatically clones channels, roles, emoji, and permissions from discord to stoat in one pass</li>
+                        <li>discord webhooks paired with stoat's masquerade feature keep avatars and usernames consistant on both sides</li>
+                    </ul>
+                </div>
+                <div class="bot-panel">
+                    <h2>setup</h2>
+                    <p>add majic klegg to your discord and stoat server, then run "!stoatcord code" and follow the instructions</p>
+                </div>
+            </section>
+
+            <div class="bottom-cta">
+                <button class="action-button action-button--stoat" href="https://stoat.chat/bot/01KYR2B6RGYFZE2GWZH2GMGQS0" aria-label="Add the Stoat bot">
+                    add stoat bot
+                </button>
+                <button class="action-button action-button--discord" href="https://discord.com/oauth2/authorize?client_id=1532163422010216670&permissions=8542015041891440&integration_type=0&scope=bot+applications.commands" aria-label="Add the Discord bot">
+                    add discord bot
+                </button>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('../sidebar.html')
+                .then(function (response) {
+                    if (!response.ok) throw new Error('Failed to load sidebar');
+                    return response.text();
+                })
+                .then(function (html) {
+                    document.getElementById('sidebar-container').innerHTML = html;
+                    attachCopyButton();
+                })
+                .catch(function (error) {
+                    console.error(error);
+                });
+
+            function attachCopyButton() {
+                var button = document.querySelector('.copy-code-button');
+                var code = document.querySelector('.sidebar-code');
+                if (!button || !code) return;
+                button.addEventListener('click', function () {
+                    var text = code.textContent.trim();
+                    navigator.clipboard.writeText(text).then(function () {
+                        button.textContent = 'copied';
+                        setTimeout(function () {
+                            button.textContent = 'copy';
+                        }, 1200);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
